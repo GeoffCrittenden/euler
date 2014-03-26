@@ -1,10 +1,10 @@
-def fibonacci(start_number)
-  if start_number == 1
+def fibonacci(sequence_number)
+  if sequence_number == 1
     0
-  elsif start_number == 2
+  elsif sequence_number == 2
     1
   else
-    fibonacci(start_number - 1) + fibonacci(start_number - 2)
+    fibonacci(sequence_number - 1) + fibonacci(sequence_number - 2)
   end
 end
 
