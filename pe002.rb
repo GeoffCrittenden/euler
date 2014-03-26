@@ -8,12 +8,11 @@ def fibonacci(start_number)
   end
 end
 
-fib_nums = []
-x = 1
+fib_nums = []; x = 1
 while fib_nums.last == nil || fib_nums.last < 4000000
   fib_nums << fibonacci(x)
   x += 1
 end
 fib_nums.pop if fib_nums.last >= 4000000
 
-puts fib_nums.select { |x| x.even? }.inject(:+)
+puts sum = fib_nums.select { |x| x.even? }.inject(:+)
