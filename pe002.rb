@@ -8,9 +8,8 @@ def fibonacci(sequence_number)
   end
 end
 
-fib_nums = []; x = 1
-while fib_nums.last == nil || fib_nums.last < 4000000
-  fib_nums << fibonacci(x)
+while (fib_nums ||= []).last == nil || fib_nums.last < 4000000
+  fib_nums << fibonacci(x ||= 1)
   x += 1
 end
 fib_nums.pop if fib_nums.last >= 4000000
