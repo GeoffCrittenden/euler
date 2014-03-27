@@ -8,8 +8,7 @@ class DifferenceBetweenSummedSquaresAndSquaredSum
 
   private
 
-  def sum_of_squares
-    total = 0
+  def sum_of_squares(total = 0)
     (1..@upper_number).to_a.each { |i| total += i**2 }
     total
   end
