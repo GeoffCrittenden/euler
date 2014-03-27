@@ -1,15 +1,29 @@
-num = 2
-divisor = 2
-primes = []
-while primes.count < 10001
-  until divisor > num / 2
-    if num % divisor == 0
-      break     
-    else
-      divisor += 1
-    end
-  end
-  primes << num unless num > divisor && num % divisor == 0
-  num += 1
-  divisor = 2
-end
+# num = 2
+# divisor = 2
+# primes = [0]
+# count = primes.count
+# while primes.last < 2_000_000
+#   until divisor > num / 2
+#     if num % divisor == 0
+#       break     
+#     else
+#       divisor += 1
+#     end
+#   end
+#   primes << num unless num > divisor && num % divisor == 0
+#   p primes.last if count != primes.count
+#   count = primes.count
+#   if num.even?
+#     num += 1
+#   else
+#     num += 2
+#   end
+#   divisor = 2
+# end
+
+# primes.pop if primes.last >= 2_000_000
+# p primes.reduce(:+)
+
+require 'Prime'
+
+p Prime.each(2_000_000).map.reduce(:+)
