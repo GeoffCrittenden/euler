@@ -1,22 +1,7 @@
-class DifferenceBetweenSummedSquaresAndSquaredSum
-  attr_reader :answer
-
-  def initialize(upper_number = 100)
-    @upper_number = upper_number
-    @answer = square_of_sum - sum_of_squares
-  end
-
-  private
-
-  def sum_of_squares(total = 0)
-    (1..@upper_number).to_a.each { |i| total += i**2 }
-    total
-  end
-
-  def square_of_sum
-    (1..@upper_number).to_a.reduce(:+)**2  
-  end
-
+sum_squares = 0; square_sum = 0
+for x in 1..100
+  sum_squares += x**2
+  square_sum += x
 end
 
-puts DifferenceBetweenSummedSquaresAndSquaredSum.new.answer
+p (square_sum)**2 - sum_squares
