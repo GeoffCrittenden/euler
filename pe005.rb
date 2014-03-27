@@ -1,7 +1,6 @@
 number = 20
 prime_factors = []
 while number > 1
-  p number
   divisor = 2
   temp_number = number
   while divisor <= temp_number
