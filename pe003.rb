@@ -19,17 +19,6 @@ class MaxPrimeFactorFinder
     number
   end
 
-  # def find_max_prime
-  #   @factors.each { |factor| return factor if prime?(factor) }
-  # end
-
-  # def prime?(number)
-  #   (2..number).each do |factor|
-  #     return false if number != factor && number % factor == 0
-  #   end
-  #   true
-  # end
-
 end
 
 num = MaxPrimeFactorFinder.new
