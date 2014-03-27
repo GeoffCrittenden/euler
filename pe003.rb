@@ -1,4 +1,4 @@
-class Number
+class MaxPrimeFactorFinder
 
   def initialize(number = 600851475143)
     @number = number
@@ -32,4 +32,4 @@ class Number
 
 end
 
-num = Number.new
+num = MaxPrimeFactorFinder.new
