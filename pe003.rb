@@ -3,7 +3,7 @@ class MaxPrimeFactorFinder
   def initialize(number = 600851475143)
     @number = number
     @factors = find_factors
-    p max_prime
+    @max_prime = find_max_prime
   end
 
   def find_factors(factors = [@number], divisor = 2)
@@ -19,7 +19,7 @@ class MaxPrimeFactorFinder
     factors
   end
 
-  def max_prime
+  def find_max_prime
     @factors.each { |factor| return factor if prime?(factor) }
   end
 
