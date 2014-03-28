@@ -24,6 +24,17 @@
 # primes.pop if primes.last >= 2_000_000
 # p primes.reduce(:+)
 
-require 'Prime'
+# require 'Prime'
 
-p Prime.each(2_000_000).map.reduce(:+)
+# p Prime.each(2_000_000).map.reduce(:+)
+
+t = Time.now
+primes = []
+for number in 2..2000000 do
+  p number
+  primes << number if primes.none? { |prime| number % prime == 0 }
+  # p Time.now - t
+end
+p Time.now - t
+p primes
+p primes.reduce(:+)
