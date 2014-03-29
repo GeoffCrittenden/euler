@@ -1,16 +1,18 @@
 t = Time.now
 upper_bound = 2000000
-prime_numbers = (3..upper_bound).map { |n| n if n.odd? }.compact
-prime_numbers.unshift(2)
 multiples = []
 sqrt = (upper_bound**0.5).to_i
-for n in 3..sqrt
-  next if n.even?
-  for i in 0..prime_numbers.count
-    break if (n**2 + i*n) > prime_numbers.last
-    multiples << n**2 + i*n
+n = 3
+while n <= sqrt
+  for i in 0..upper_bound
+    multiple = n**2 + i*n
+    break if multiple > upper_bound
+    multiples << multiple
   end
+  n += 2
 end
+prime_numbers = (3..upper_bound).map { |n| n if n.odd? }.compact
+prime_numbers.unshift(2)
 p (prime_numbers - multiples).reduce(:+)
 
 p Time.now - t
