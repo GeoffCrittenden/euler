@@ -12,4 +12,5 @@ for n in 3..sqrt
   end
 end
 p (prime_numbers - multiples).reduce(:+)
+
 p Time.now - t
