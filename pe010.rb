@@ -1,8 +1,10 @@
 t = Time.now
-upper_bound = ARGV[0].to_i
-prime_numbers = (2..upper_bound).to_a
+upper_bound = 2000000
+prime_numbers = (3..upper_bound).map { |n| n if n.odd? }.compact
+prime_numbers.unshift(2)
 multiples = []
-for n in 2..Math.sqrt(upper_bound)
+for n in 3..Math.sqrt(upper_bound)
+  next if n.even?
   for i in 0..prime_numbers.count
     break if (n**2 + i*n) > prime_numbers.last
     multiples << n**2 + i*n
