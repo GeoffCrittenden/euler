@@ -9,5 +9,10 @@ def sum_proper_divisors(n)
 end
 
 t = Time.now
-p (1..9999).select { |n| n != sum_proper_divisors(n) && n == sum_proper_divisors(sum_proper_divisors(n)) }.reduce(:+)
+sums = []
+(1..9999).each { |n| sums << [n,sum_proper_divisors(n)] }
+sums.map! { |n| n.sort }.sort!
+amicables = []
+sums.each_with_index { |sum,i| amicables << sum if sum == sums[i + 1] }
+p amicables.flatten.reduce(:+)
 p Time.now - t
